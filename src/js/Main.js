@@ -5,6 +5,7 @@ const addCatsBtn = document.querySelector(".btn--addCats");
 const inputImage = document.querySelector("#inputImage");
 const upload__imgsContainer = document.querySelector(".upload__imgsContainer");
 const uploadbtnCat = document.querySelector(".upload--btnCat");
+const modalContainer = document.querySelector(".modalContainer");
 const modalRes = document.querySelector(".modalRes");
 const modalBtn = document.querySelector(".modal--btn");
 //*RAMDOM CATS CONTAINER
@@ -33,7 +34,7 @@ async function fetchData(urlApi) {
       `;
       })
       .join("");
-    imagesContainer.innerHTML = imagesView;
+    imagesContainer.innerHTML += imagesView;
   } catch (error) {
     // console.log(error);
   }
@@ -107,8 +108,8 @@ async function getFavoritesCats(urlApi) {
   var imagesItems = document.querySelectorAll(".container__ImgFavorite");
   imagesItems.forEach((e) => {
     e.addEventListener("dblclick", (item) => {
-      console.log(item.target);
-      console.log("item.target.id", item.target.id);
+      // console.log(item.target);
+      // console.log("item.target.id", item.target.id);
       deleteFavoriteCat(item.target.id);
       favoritesContainer.removeChild(item.target.parentNode);
     });
@@ -182,13 +183,37 @@ async function uploadCatPhoto() {
   });
   const data = await res.json();
 
-  if (res.status == 200 || res.status == 201) {
-    // console.log("data de upload", data);
-    addFavoritesCat(API_FAVORITE, data.id);
-    modalRes.style.display = "flex";
-    upload__imgsContainer.style.display = "none";
+  if (res.status >= 200 && res.status < 300) {
+    await addFavoritesCat(API_FAVORITE, data.id);
+    // alert("gato agregado");
+    modalRes.innerHTML = `
+    <div class="modal__content">
+              <h3 class="modal__title">Uploaded😽!</h3>
+              <p class="modal__text">
+                Your cat image has been uploaded to your favorites!
+              </p>
+            </div>
+            <button class="modal--btn ON">OK</button>
+    `;
+    const modalBtnOn = document.querySelector(".ON");
+    modalBtnOn.addEventListener("click", () => {
+      modalContainer.style.display = "none";
+    });
   } else {
-    alert(`Errror en subir ${res.status}, ${data.message}`);
+    // alert(`Errror en subir ${res.status}, ${data.message}`);
+    modalRes.innerHTML = `
+    <div class="modal__content">
+              <h3 class="modal__title">Ups...😿</h3>
+              <p class="modal__text">
+                Something went wrong, please try again.
+              </p>
+            </div>
+            <button class="modal--btn ON">OK</button>
+    `;
+    const modalBtnOn = document.querySelector(".ON");
+    modalBtnOn.addEventListener("click", () => {
+      modalContainer.style.display = "none";
+    });
   }
 }
 
@@ -211,10 +236,11 @@ inputImage.addEventListener("change", (e) => {
   }
 });
 
-uploadbtnCat.addEventListener("click", () => {
+uploadbtnCat.addEventListener("click", async function () {
+  modalContainer.style.display = "flex";
+  modalBtn.disabled = true;
   uploadCatPhoto();
-});
 
-modalBtn.addEventListener("click", () => {
-  modalRes.style.display = "none";
+  // modalBtn.disabled = true;
+  upload__imgsContainer.style.display = "none";
 });

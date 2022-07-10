@@ -13,40 +13,40 @@ const favoritesSection = document.querySelector(".main__favorites");
 const uploadSection = document.querySelector(".main__upload");
 //*NAVIGATION MENU
 randomMenu.addEventListener("click", () => {
-  console.log("randomMenu");
+  // console.log("randomMenu");
   randomSection.style.display = "flex";
   favoritesSection.style.display = "none";
   uploadSection.style.display = "none";
 });
 favoritesMenu.addEventListener("click", () => {
-  console.log("favoritesMenu");
+  // console.log("favoritesMenu");
   randomSection.style.display = "none";
   favoritesSection.style.display = "flex";
   uploadSection.style.display = "none";
 });
 UploadMenu.addEventListener("click", () => {
-  console.log("UploadMenu");
+  // console.log("UploadMenu");
   randomSection.style.display = "none";
   favoritesSection.style.display = "none";
   uploadSection.style.display = "flex";
 });
 //*NAVIGATION MENU RESPONSIVE
 randomMenuRes.addEventListener("click", () => {
-  console.log("randomMenuRes");
+  // console.log("randomMenuRes");
   randomSection.style.display = "flex";
   favoritesSection.style.display = "none";
   uploadSection.style.display = "none";
   menu_responsive.classList.toggle("Activate-menu_responsive");
 });
 favoritesMenuRes.addEventListener("click", () => {
-  console.log("favoritesMenuRes");
+  // console.log("favoritesMenuRes");
   randomSection.style.display = "none";
   favoritesSection.style.display = "flex";
   uploadSection.style.display = "none";
   menu_responsive.classList.toggle("Activate-menu_responsive");
 });
 uploadMenuRes.addEventListener("click", () => {
-  console.log("UploadMenuRes");
+  // console.log("UploadMenuRes");
   randomSection.style.display = "none";
   favoritesSection.style.display = "none";
   uploadSection.style.display = "flex";
