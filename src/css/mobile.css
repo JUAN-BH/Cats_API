@@ -378,7 +378,7 @@ footer h2 {
   width: 20px;
   height: 20px;
   margin: auto 10px;
-  background-image: url("https://cdn-icons.flaticon.com/png/512/3536/premium/3536505.png?token=exp=1657406612~hmac=4b9d181f4b2df96aa8c65c52cb040acb");
+  background-image: url("../img/linkedin.png");
   background-size: cover;
   cursor: pointer;
 }
@@ -386,7 +386,7 @@ footer h2 {
   width: 20px;
   height: 20px;
   margin: auto 5px;
-  background-image: url("https://cdn-icons.flaticon.com/png/512/3291/premium/3291695.png?token=exp=1657406988~hmac=85c3841cbfe804a376f3095bcb994870");
+  background-image: url("../img/github.png");
   background-size: cover;
   cursor: pointer;
 }
