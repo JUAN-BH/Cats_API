@@ -1,0 +1,46 @@
+header {
+  padding: 10px 150px;
+}
+.title__logo {
+  margin-right: 8px;
+}
+.btn__menuRes {
+  display: none;
+}
+.menu_responsive {
+  display: none;
+}
+.header__menuNormal {
+  display: block;
+}
+.menuNormal__item {
+  margin: auto;
+  display: inline-block;
+}
+.menuNormal__link {
+  color: white;
+  padding: 10px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-decoration: none;
+  margin-left: 20px;
+  transition: all 0.2s ease;
+}
+.menuNormal__link:hover {
+  color: rgb(39, 118, 171);
+  text-decoration: underline;
+}
+/*------------------------------------*/
+main {
+  padding: 12px 150px;
+}
+.container__Img {
+  margin: 10px;
+}
+.container__ImgFavorite {
+  margin: 10px;
+}
+/*------------------------------------*/
+footer {
+  padding: 12px 150px;
+}

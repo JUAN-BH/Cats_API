@@ -1,0 +1,27 @@
+{
+  "name": "curso_apirest",
+  "version": "1.0.0",
+  "description": "Practice of consume API with JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gh-pages -d src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/JUAN-BH/Cats_API.git"
+  },
+  "keywords": [
+    "API",
+    "JavaScript"
+  ],
+  "author": "Juan Manuel Becerra",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JUAN-BH/Cats_API/issues"
+  },
+  "homepage": "https://github.com/JUAN-BH/Cats_API#readme",
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
+  }
+}
