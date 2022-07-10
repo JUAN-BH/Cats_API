@@ -23,7 +23,7 @@ async function fetchData(urlApi) {
   try {
     const response = await fetch(urlApi);
     const data = await response.json();
-    console.log("la data de la api", data);
+    // console.log("la data de la api", data);
     let imagesView = data
       .map((e) => {
         return `
@@ -35,12 +35,12 @@ async function fetchData(urlApi) {
       .join("");
     imagesContainer.innerHTML = imagesView;
   } catch (error) {
-    console.log(error);
+    // console.log(error);
   }
   var imagesItems = document.querySelectorAll(".container__Img");
   imagesItems.forEach((e) => {
     e.addEventListener("dblclick", (item) => {
-      console.log(item.target);
+      // console.log(item.target);
       /*let containerImages = Array.from(favoritesContainer.children).map(
         (e) => e.id
       );
@@ -71,9 +71,11 @@ async function fetchData(urlApi) {
           doubletap = false;
         }, 300);
       } else {
-        console.log("doubletap");
-        item.target.nextSibling.parentNode.innerHTML += `<span class="Animated_heart"> </span>`;
-        addFavoritesCat(API_FAVORITE, item.target.id);
+        // console.log("doubletap");
+        setTimeout(() => {
+          item.target.nextSibling.parentNode.innerHTML += `<span class="Animated_heart"> </span>`;
+          addFavoritesCat(API_FAVORITE, item.target.id);
+        }, 300);
         // console.log("e.target", e.children.item(1));
       }
     });
@@ -88,7 +90,7 @@ async function getFavoritesCats(urlApi) {
     },
   });
   const data = await response.json();
-  console.log("data de favoritos", data);
+  // console.log("data de favoritos", data);
 
   let imagesView = data
     .map((e) => {
@@ -118,9 +120,11 @@ async function getFavoritesCats(urlApi) {
           doubletap = false;
         }, 300);
       } else {
-        console.log("doubletap");
+        // console.log("doubletap");
         deleteFavoriteCat(item.target.id);
-        favoritesContainer.removeChild(item.target.parentNode);
+        setTimeout(() => {
+          favoritesContainer.removeChild(item.target.parentNode);
+        }, 300);
       }
     });
   });
@@ -139,7 +143,7 @@ async function addFavoritesCat(urlApi, id) {
     }),
   });
   const data = await res.json();
-  console.log("data de favoritos agregado", data);
+  // console.log("data de favoritos agregado", data);
   if (res.status == 200) {
     // alert("Favorito agregado");
   } else {
@@ -156,7 +160,7 @@ async function deleteFavoriteCat(id) {
     },
   });
   const data = await res.json();
-  console.log("data de DELETE", res);
+  // console.log("data de DELETE", res);
   if (res.status == 200) {
     // alert("gato eliminado");
   } else {
@@ -167,7 +171,7 @@ async function deleteFavoriteCat(id) {
 async function uploadCatPhoto() {
   const form = document.querySelector("#uploadForm");
   const formData = new FormData(form);
-  console.log("upload", formData.get("file"));
+  // console.log("upload", formData.get("file"));
   const res = await fetch(API_UPLOAD, {
     method: "POST",
     headers: {
@@ -179,7 +183,7 @@ async function uploadCatPhoto() {
   const data = await res.json();
 
   if (res.status == 200 || res.status == 201) {
-    console.log("data de upload", data);
+    // console.log("data de upload", data);
     addFavoritesCat(API_FAVORITE, data.id);
     modalRes.style.display = "flex";
     upload__imgsContainer.style.display = "none";
