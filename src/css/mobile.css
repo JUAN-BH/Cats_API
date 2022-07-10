@@ -123,6 +123,7 @@ main {
   flex-direction: column;
   justify-content: center;
   margin-top: 70px;
+  margin-bottom: 30px;
 }
 .section_title {
   font-size: var(--tittle);
