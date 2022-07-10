@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/mobile.css" />
+    <link rel="stylesheet" href="css/tablet.css" media="(min-width: 1024px)" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container__title">
+        <h1 class="title__logo">🐱</h1>
+        <ul class="title__info">
+          <li><h1>Cats</h1></li>
+          <li>API consumption practice with JavaScript👩‍💻</li>
+        </ul>
+      </div>
+      <div class="btn__menuRes">
+        <span class="bar1__menu"></span>
+        <span class="bar2__menu"></span>
+        <span class="bar3__menu"></span>
+      </div>
+      <nav class="menu_responsive">
+        <ul class="menu__list">
+          <li class="menu__item">
+            <a href="#" class="menu__link" id="randomMenuRes"
+              >Random cat images</a
+            >
+          </li>
+          <li class="menu__item">
+            <a href="#" class="menu__link" id="favoritesMenuRes"
+              >Your favorites</a
+            >
+          </li>
+          <li class="menu__item">
+            <a href="#" class="menu__link" id="uploadMenuRes"
+              >Upload your own cat image</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <nav class="header__menuNormal">
+        <ul class="menuNormal__list">
+          <li class="menuNormal__item">
+            <a href="#" class="menuNormal__link" id="randomMenu"
+              >Random cat images</a
+            >
+          </li>
+          <li class="menuNormal__item">
+            <a href="#" class="menuNormal__link" id="favoritesMenu"
+              >Your favorites</a
+            >
+          </li>
+          <li class="menuNormal__item">
+            <a href="#" class="menuNormal__link" id="UploadMenu"
+              >Upload your own cat image</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="main__randomImages section">
+        <h2 class="randomImages__tittle section_title">
+          Random cat images 🎲 <br />
+          <span>Double tap to mark as favorite 😻</span>
+        </h2>
+        <div class="menuAddCats">
+          <input class="input--cats" type="number" placeholder="Add cats" />
+          <button class="btn--addCats" type="submit">Add</button>
+        </div>
+        <div class="randomImagesContainer__imagesContainer"></div>
+      </section>
+      <section class="main__favorites section">
+        <h2 class="favorites__title section_title">
+          Your favorites 😻<br />
+          <span>Double tap to unfavorite 💔</span>
+        </h2>
+        <div class="favorites__imgsContainer"></div>
+      </section>
+      <section class="main__upload section">
+        <h2 class="upload__title section_title">
+          Upload your cat image ⬆<br />
+          <span>It will be displayed in your favorites 😻</span>
+        </h2>
+        <div class="upload__imgsContainer"></div>
+        <form action="" id="uploadForm">
+          <input type="file" name="file" id="inputImage" />
+          <label for="inputImage" class="chooseImage">
+            <span class="material-symbols-outlined"> add_photo_alternate </span>
+            Choose Image
+          </label>
+          <button type="button" class="upload--btnCat">Add Cat</button>
+        </form>
+        <div class="modalRes">
+          <div class="modal__text">
+            <h3 class="modal__title">Uploaded 😽!</h3>
+            <p class="modal__text">
+              Your cat image has been uploaded to your favorites!
+            </p>
+          </div>
+          <button class="modal--btn">OK</button>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <h2>Made by Juan Manuel Becerra</h2>
+      <a
+        href="https://www.linkedin.com/in/juan-manuel-becerra-hernandez-11b93b239/"
+        target="_blank"
+      >
+        <div class="linkedIn"></div>
+      </a>
+      <a href="https://github.com/JUAN-BH" target="_blank">
+        <div class="GitHub"></div>
+      </a>
+    </footer>
+    <script type="module" src="/src/js/Navigation.js"></script>
+    <script type="module" src="/src/js/MenuRes.js"></script>
+    <script defer type="module" src="/src/js/Main.js"></script>
+  </body>
+</html>
