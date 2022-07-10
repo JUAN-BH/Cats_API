@@ -99,14 +99,17 @@
           </label>
           <button type="button" class="upload--btnCat">Add Cat</button>
         </form>
-        <div class="modalRes">
-          <div class="modal__text">
-            <h3 class="modal__title">Uploaded 😽!</h3>
-            <p class="modal__text">
-              Your cat image has been uploaded to your favorites!
-            </p>
+        <div class="modalContainer">
+          <div class="modalRes">
+            <div class="modal__content">
+              <h3 class="modal__title">Uploading...</h3>
+              <div class="loading"></div>
+              <!-- <p class="modal__text">
+                Your cat image has been uploaded to your favorites!
+              </p> -->
+            </div>
+            <button class="modal--btn OFF">OK</button>
           </div>
-          <button class="modal--btn">OK</button>
         </div>
       </section>
     </main>
